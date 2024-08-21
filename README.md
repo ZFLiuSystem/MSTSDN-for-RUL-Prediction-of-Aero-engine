@@ -4,11 +4,13 @@ based on multi-scale feature extraction, named Multi-Scale Temporal-Spatial feat
 The experiments were conducted by using two aero-engine datasets, namely C-MAPSS and N-CMAPSS, to evaluate RUL prediction performance of MSTSDN. 
 The repository contains the datasets used, the code to construct MSTSDN,  and the code to train and test the model.
 
+
 The following is the experimental environment used:
 GPU: NVIDIA GeForce RTX 3070.
 CPU: AMD Ryzen 7 5800.
 Pytorch: version==2.2.1+cu118.
 Python: version==3.11.8.
+
 
 Finally, here are the data source links for C-MAPSS and N-CMAPSS:
 1.https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository.
