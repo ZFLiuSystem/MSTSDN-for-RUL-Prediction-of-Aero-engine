@@ -21,11 +21,94 @@
 > the engine degradation phase.
 > </div>
 
+> **PytorchModel**
+> -
+> ---
+> Here is MSTSDN constructed using Pytorch (as an example on the DS07 subdataset of N-CMAPSS): <br>
+> MSTSDNModel(<br>
+  (pmtt): PMTTransformer(<br>
+    (tf_modules): ModuleList(<br>
+      (0-3): 4 x STFeatureExtractionLayer(<br>
+        (multi_head_wa): WindowTransformerBlock(
+          (attn_norm): LayerNorm((28,), eps=1e-05, elementwise_affine=True)<br>
+          (mlp_norm): LayerNorm((28,), eps=1e-05, elementwise_affine=True)<br>
+          (window_attn): WindowAttention(<br>
+            (softmax): Softmax(dim=-1)<br>
+            (q): Linear(in_features=28, out_features=32, bias=False)<br>
+            (k): Linear(in_features=28, out_features=32, bias=False)<br>
+            (v): Linear(in_features=28, out_features=32, bias=False)<br>
+            (proj): Linear(in_features=32, out_features=28, bias=False)<br>
+            (attn_dropout): Dropout(p=0.1, inplace=False)<br>
+            (proj_dropout): Dropout(p=0.1, inplace=False)
+          )
+        )<br>
+        (multi_head_swa): WindowTransformerBlock(<br>
+          (attn_norm): LayerNorm((28,), eps=1e-05, elementwise_affine=True)<br>
+          (mlp_norm): LayerNorm((28,), eps=1e-05, elementwise_affine=True)<br>
+          (window_attn): WindowAttention(<br>
+            (softmax): Softmax(dim=-1)<br>
+            (q): Linear(in_features=28, out_features=32, bias=False)<br>
+            (k): Linear(in_features=28, out_features=32, bias=False)<br>
+            (v): Linear(in_features=28, out_features=32, bias=False)<br>
+            (proj): Linear(in_features=32, out_features=28, bias=False)<br>
+            (attn_dropout): Dropout(p=0.1, inplace=False)<br>
+            (proj_dropout): Dropout(p=0.1, inplace=False)
+          )<br>
+          (mlp): MLP(<br>
+            (linear1): Linear(in_features=28, out_features=44, bias=True)<br>
+            (linear2): Linear(in_features=44, out_features=28, bias=True)<br>
+            (act_1): GELU(approximate='none')<br>
+            (act_2): GELU(approximate='none')<br>
+            (dropout_0): Dropout(p=0.1, inplace=False)<br>
+            (dropout_1): Dropout(p=0.1, inplace=False)
+          )
+        )
+      )
+    )
+  )<br>
+  (mbgcn): MBGraphConvolutionalNetwork(<br>
+    (gsl_modules): ModuleList(<br>
+      (0-3): 4 x AdaptiveGraphStructureLearningModule(<br>
+        (linear1): Linear(in_features=30, out_features=23, bias=True)<br>
+        (linear2): Linear(in_features=30, out_features=23, bias=True)<br>
+        (adj_dropout): Dropout(p=0.1, inplace=False)<br>
+        (act_1): GELU(approximate='none')<br>
+        (act_2): GELU(approximate='none')
+      )
+    )<br>
+    (bgc_networks): ModuleList(<br>
+      (0-3): 4 x BGraphConvolutionalNetwork(<br>
+        (bgc_layer): BidirectionalGraphConvolutionalLayer(<br>
+          (dropout): Dropout(p=0.1, inplace=False)<br>
+          (weight_f): Linear(in_features=30, out_features=30, bias=False)<br>
+          (weight_b): Linear(in_features=30, out_features=30, bias=False)<br>
+          (act): ReLU()
+        )
+      )
+    )<br>
+    (fusion_module): MFFusionModule(<br>
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+  )<br>
+  (rn): RegressionNetwork(<br>
+    (flatten): Flatten(start_dim=-2, end_dim=-1)<br>
+    (mlp): Sequential(<br>
+      (0): Linear(in_features=840, out_features=504, bias=True)<br>
+      (1): ReLU()<br>
+      (2): Dropout(p=0.75, inplace=False)<br>
+      (3): Linear(in_features=504, out_features=151, bias=True)<br>
+      (4): ReLU()<br>
+      (5): Dropout(p=0.75, inplace=False)
+    )<br>
+    (regression_layer): Linear(in_features=151, out_features=1, bias=True)
+  )
+).<br>
+
 > **Datasets**
 > -
-> _Reference_: 1. https://ieeexplore.ieee.org/document/4711414; 2. https://www.mdpi.com/2306-5729/6/1/5.
-> 
-> --- 
+> _Reference_: 1. https://ieeexplore.ieee.org/document/4711414; 
+>              2. https://www.mdpi.com/2306-5729/6/1/5. 
+> ---
 > Here are the data source links for C-MAPSS and N-CMAPSS: <br>
 > 1.https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository ;<br>
 > 2.https://data.nasa.gov/Aeorspace/CMAPSS-Jet-Engine-Simulated-Data/ff5v-kuh6 ;<br>
