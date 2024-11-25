@@ -106,8 +106,8 @@
 
 > **Datasets**
 > -
-> _Reference_: 1. https://ieeexplore.ieee.org/document/4711414; 
->              2. https://www.mdpi.com/2306-5729/6/1/5. 
+> _Reference_: 1. https://ieeexplore.ieee.org/document/4711414; 2. https://www.mdpi.com/2306-5729/6/1/5.
+> 
 > ---
 > Here are the data source links for C-MAPSS and N-CMAPSS: <br>
 > 1.https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository ;<br>
