@@ -4,7 +4,7 @@
 > 
 > ---
 > <div style="text-align:justify;"> 
-> Remaininguseful life (RUL) prediction is crucial for simplifying maintenance procedures and extending the life span of 
+> Remaining Useful Life (RUL) prediction is crucial for simplifying maintenance procedures and extending the life span of 
 > aero engines. Therefore, research on RUL prediction methods for aero engines is increasingly gaining attention. 
 > In particular, some existing deep neural networks based on multiscale features extraction have achieved certain results 
 > in RUL predictions for aero-engines. However, these models often overlook two critical factors that affect RUL 
